@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Test-HTTP-Response
-version:            0.01
+version:            0.02
 abstract:           ~
 author:
     - Aaron Trevena <teejay@(none)>

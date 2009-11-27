@@ -6,7 +6,7 @@ use Data::Dumper;
 
 use CGI::Cookie;
 
-use Test::More tests => 6;
+use Test::More tests => 8;
 use Test::HTTP::Response;
 
 # Create new cookies, headers, etc
@@ -52,3 +52,11 @@ status_ok($response);
 # is ($actual_failures, 3 ,'other status codes failed as expected');
 
 header_matches($response, 'Content-type', 'Text/HTML', 'correct content type');
+
+my $cookie2 = new CGI::Cookie(-name=>'ID',-value=>123456789);
+my $headers2 = ['set_cookie' => $cookie2->as_string, 'content_type', 'Text/HTML'];
+my $message2 = HTTP::Message->new( $headers2, '<HTML><BODY><h1>Hello World</h1></BODY></HTML>');
+my $response2 = HTTP::Response->new( 200, $message2, $message2->headers );
+
+cookie_matches($response2, { key => 'ID' },'ID exists ok');
+cookie_matches($response2, { key => 'ID', value=>"123456789" }, 'ID value correct');
