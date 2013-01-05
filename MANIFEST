@@ -6,4 +6,5 @@ t/01_compiles.t
 t/02_simple_api.t
 t/03_headers.t
 lib/Test/HTTP/Response.pm
-META.yml                                 Module meta-data (added by MakeMaker)
+META.yml                                 Module YAML meta-data (added by MakeMaker)
+META.json                                Module JSON meta-data (added by MakeMaker)
