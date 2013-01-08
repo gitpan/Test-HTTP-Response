@@ -1,12 +1,12 @@
 {
    "abstract" : "unknown",
    "author" : [
-      "Aaron Trevena <teejay@(none)>"
+      "Aaron Trevena <teejay@cpan.org>"
    ],
    "dynamic_config" : 1,
    "generated_by" : "ExtUtils::MakeMaker version 6.62, CPAN::Meta::Converter version 2.120921",
    "license" : [
-      "unknown"
+      "perl_5"
    ],
    "meta-spec" : {
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
@@ -32,7 +32,8 @@
       },
       "runtime" : {
          "requires" : {
-            "HTTP::Response" : "0"
+            "HTTP::Cookies" : "5.827",
+            "HTTP::Message" : "5.828"
          }
       }
    },
@@ -42,5 +43,5 @@
          "url" : "https://github.com/hashbangperl/Test--HTTP--Response"
       }
    },
-   "version" : "0.05"
+   "version" : "0.06"
 }
